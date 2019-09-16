@@ -1,15 +1,16 @@
 package com.enigma.model;
 
+
 public enum Direction {
-        NORTH,
-    WEST,
+    NORTH,
+    EAST,
     SOUTH,
-    EAST;
-//    Direction turnLeft(Direction direction){
-//        return Direction.NORTH;
-//    }
-//    Direction turnRigth(Direction direction){
-//        return Direction.NORTH;
-//    }
+    WEST;
+    Direction turnRight(){
+        return Direction.values()[(ordinal()+1)%4];
+    }
+    Direction turnLeft(){
+        return Direction.values()[(ordinal()+3)%4];
+    }
 
 }
